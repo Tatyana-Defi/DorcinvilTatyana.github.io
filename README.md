@@ -1,4 +1,4 @@
-# DorcinvilTatyana.github.io
+# Applying Great-Expectations Principles to Validate Streaming Recommendation Data
 
 This repository hosts my GitHub Pages site for Assignment 3 in CAP 6930 (Tools for Production ML Systems) at Florida Atlantic University. The live site contains my blog post exploring data-quality validation using a Great-Expectations–style workflow applied to an anime dataset.
 
