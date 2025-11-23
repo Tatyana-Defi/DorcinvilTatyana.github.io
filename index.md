@@ -178,6 +178,10 @@ If you want to explore this type of tool, start with something simple:
 Small checks protect your entire ML system.
 
 ---
+# Final Thoughts
+This project gave me a realistic experience with data validation in ML systems. It showed me how small issues can break a pipeline and how important it is to run automated checks before training or deploying a model.
+
+---
 
 # Additional Evidence Section
 
