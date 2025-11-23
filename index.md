@@ -53,7 +53,8 @@ Some quick insights I printed:
 - Members total over 222 million  
 
 **Screenshot 1: Dataset load + printed head + dataset info**  
-![Dataset info screenshot](assets/screenshots/screenshot1.png)
+![Dataset info screenshot](<img width="641" height="533" alt="Screenshot 2025-11-22 at 7 05 02 PM" src="https://github.com/user-attachments/assets/d68edfe0-72cf-4cab-835a-3bff5adfa729" />)
+
 
 This is very similar to the type of catalog metadata a real streaming platform would validate before using it in recommendations.
 
@@ -79,7 +80,8 @@ The results:
 - Success rate: 100 percent  
 
 **Screenshot 2: Clean data pass/fail summary**  
-![Clean validation screenshot](assets/screenshots/screenshot2.png)
+![Clean validation screenshot](<img width="617" height="251" alt="Screenshot 2025-11-22 at 7 07 32 PM" src="https://github.com/user-attachments/assets/daf33147-8fcc-4c88-81b8-19248c659db9" />)
+
 
 This confirmed that the dataset was ready to be used downstream by an ML model.
 
@@ -111,7 +113,8 @@ The validation checks caught:
 Overall success rate: 66.7 percent.
 
 **Screenshot 3: Corrupted data detection results**  
-![Corrupted data screenshot](assets/screenshots/screenshot3.png)
+![Corrupted data screenshot](<img width="621" height="242" alt="Screenshot 2025-11-22 at 7 07 42 PM" src="https://github.com/user-attachments/assets/9b44ad30-d95e-4860-a844-4693270c2aad" />)
+
 
 This demonstrated how quickly data quality can fall apart if nothing is monitoring the data flowing into a model.
 
@@ -178,11 +181,11 @@ Small checks protect your entire ML system.
 You can place any remaining log screenshots or code output here.
 
 **Screenshot 4: Additional logs or extended outputs**  
-![Extra screenshot](assets/screenshots/screenshot4.png)
+![Extra screenshot](
 
 ---
 
-# Peer Comment Links (to be filled in after posting)
+# Peer Comment Links
 
 - Peer Comment 1:  
 - Peer Comment 2:  
