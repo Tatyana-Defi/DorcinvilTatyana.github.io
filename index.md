@@ -183,7 +183,7 @@ Small checks protect your entire ML system.
 
 
 **Screenshot 4: Additional logs or extended outputs**  
-<img width="633" height="451" alt="Screenshot 2025-11-22 at 7 07 23 PM" src="https://github.com/user-attachments/assets/c2d03bf0-f5cb-4402-b989-9489b1f02ee8" />
+<img width="622" height="451" alt="Screenshot 2025-11-22 at 7 07 23 PM" src="https://github.com/user-attachments/assets/c2d03bf0-f5cb-4402-b989-9489b1f02ee8" />
 <img width="622" height="140" alt="Screenshot 2025-11-22 at 7 07 51 PM" src="https://github.com/user-attachments/assets/16f04086-ebc5-4740-813a-d92250669e22" />
 
 
@@ -194,6 +194,3 @@ Small checks protect your entire ML system.
 - Peer Comment 1:  
 - Peer Comment 2:  
 
----
-
-# End of Blog Post
