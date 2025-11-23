@@ -53,7 +53,8 @@ Some quick insights I printed:
 - Members total over 222 million  
 
 **Screenshot 1: Dataset load + printed head + dataset info**  
-![Dataset info screenshot](<img width="641" height="533" alt="Screenshot 2025-11-22 at 7 05 02 PM" src="https://github.com/user-attachments/assets/d68edfe0-72cf-4cab-835a-3bff5adfa729" />)
+<img width="641" height="533" alt="Screenshot 2025-11-22 at 7 05 02 PM" src="https://github.com/user-attachments/assets/c5ff83f6-60af-4461-adaf-bbc8e0000d9e" />
+
 
 
 This is very similar to the type of catalog metadata a real streaming platform would validate before using it in recommendations.
@@ -80,7 +81,8 @@ The results:
 - Success rate: 100 percent  
 
 **Screenshot 2: Clean data pass/fail summary**  
-![Clean validation screenshot](<img width="617" height="251" alt="Screenshot 2025-11-22 at 7 07 32 PM" src="https://github.com/user-attachments/assets/daf33147-8fcc-4c88-81b8-19248c659db9" />)
+<img width="617" height="251" alt="Screenshot 2025-11-22 at 7 07 32 PM" src="https://github.com/user-attachments/assets/d34a977f-2eae-47cc-9637-323a01d03884" />
+
 
 
 This confirmed that the dataset was ready to be used downstream by an ML model.
@@ -113,7 +115,8 @@ The validation checks caught:
 Overall success rate: 66.7 percent.
 
 **Screenshot 3: Corrupted data detection results**  
-![Corrupted data screenshot](<img width="621" height="242" alt="Screenshot 2025-11-22 at 7 07 42 PM" src="https://github.com/user-attachments/assets/9b44ad30-d95e-4860-a844-4693270c2aad" />)
+
+<img width="621" height="242" alt="Screenshot 2025-11-22 at 7 07 42 PM" src="https://github.com/user-attachments/assets/4b10d5d8-9134-4407-af5a-58d381fe9224" />
 
 
 This demonstrated how quickly data quality can fall apart if nothing is monitoring the data flowing into a model.
@@ -178,10 +181,11 @@ Small checks protect your entire ML system.
 
 # Additional Evidence Section
 
-You can place any remaining log screenshots or code output here.
 
 **Screenshot 4: Additional logs or extended outputs**  
-![Extra screenshot](
+<img width="633" height="451" alt="Screenshot 2025-11-22 at 7 07 23 PM" src="https://github.com/user-attachments/assets/c2d03bf0-f5cb-4402-b989-9489b1f02ee8" />
+<img width="622" height="140" alt="Screenshot 2025-11-22 at 7 07 51 PM" src="https://github.com/user-attachments/assets/16f04086-ebc5-4740-813a-d92250669e22" />
+
 
 ---
 
