@@ -192,9 +192,5 @@ This project gave me a realistic experience with data validation in ML systems. 
 
 
 ---
-
-# Peer Comment Links
-
-- Peer Comment 1:  
-- Peer Comment 2:  
+ 
 
