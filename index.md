@@ -4,7 +4,7 @@
 
 ---
 
-## A more personal introduction
+## Personal Introduction
 
 When I started this assignment, I knew I didn’t want to just write a surface-level overview of some random ML tool. I wanted something hands-on, something that felt close to what real ML engineers deal with every day. Since I enjoy working with real datasets, this felt like the perfect chance to test out data validation using something that actually interests me.
 
