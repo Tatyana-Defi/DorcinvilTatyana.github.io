@@ -18,6 +18,10 @@ Screenshots, logs, and supporting evidence are included directly on the blog pag
 
 ## Repository Structure
 ├── index.md                 # Main blog post
+
+
 ├── assets/
 │   └── screenshots/         # Images used in the blog
+
+
 └── _config.yml              # GitHub Pages configuration
