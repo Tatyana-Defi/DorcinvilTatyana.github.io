@@ -4,208 +4,168 @@
 
 ---
 
-## What I Completed for Assignment 3
+## A more personal introduction
 
-For Option 1, I explored a real production ML tool concern:  
-**data quality validation** using a Great Expectations–style framework.
+When I started this assignment, I knew I wanted to choose something hands-on. I didn’t want to just write about a tool; I wanted to actually try something that feels close to what real ML engineers do every day. Since I love working with real datasets, I figured this was the perfect chance to experiment with data quality checks.
 
-I implemented:
+I used my anime dataset, which honestly made the whole project more fun. Instead of another dry academic dataset, I got to validate information on shows, genres, ratings, members, and everything else that would normally feed into a recommendation system. If anything was messy or broken, it would immediately impact a model’s performance, which made the project feel realistic.
 
-✔ A real Python-based expectation suite  
-✔ Data validation for my anime dataset  
-✔ Simulation of production data corruption  
-✔ Clear pass/fail reporting  
-✔ Evidence screenshots  
-✔ A true ML scenario: validating content data used for recommendations  
-
-This fully satisfies the “Try a tool” requirement.
-
-Now here is the polished blog write-up explaining the tool, results, and key takeaways.
+This blog walks through what I built, what worked, and what I learned while simulating real production issues.
 
 ---
 
-# Introduction
+# What I completed for Assignment 3
 
-Production ML systems depend heavily on clean, trustworthy data. You can train the perfect model, but if the data feeding into it becomes corrupted or inconsistent, your pipeline will quietly break. This leads to:
+For Option 1, I built a full data-quality validation workflow inspired by Great Expectations. Instead of installing the entire GE suite, I created lightweight Python versions of the most useful expectations. This let me understand exactly how data validation works behind the scenes.
 
-- bad recommendations  
-- UI errors  
-- user churn  
-- incorrect business decisions  
+Here’s what I accomplished:
 
-To practice solving this real-world problem, I built a **Great-Expectations-style data validation suite** in Python using my **anime.csv** dataset. Instead of installing the full tool, I implemented lightweight versions of GE’s expectations to learn how they work at a low level.
+- Created a custom Great Expectations–style test suite in Python  
+- Validated a real dataset (anime.csv)  
+- Simulated realistic production data corruption  
+- Collected pass/fail results  
+- Added printed logs and summaries  
+- Took screenshots showing all validation steps  
 
-The goal:  
-**validate the dataset before it enters a recommendation system.**
-
----
-
-# Why Data Quality Matters in ML
-
-Bad input data causes:
-
-- duplicate IDs → conflicting item definitions  
-- missing names → broken UI rendering  
-- invalid ratings → distorted training signals  
-- negative member counts → corrupted popularity ranking  
-- mismatched “type” values → poor content grouping  
-
-Pipeline failures come from:
-
-- schema changes  
-- upstream bugs  
-- ETL mistakes  
-- API mismatches  
-- manual errors  
-
-Automated data validation catches issues early.
-
----
-
-# The Tool: Great-Expectations-Style Validation
-
-I implemented the following expectations manually:
-
-- `expect_column_values_to_be_unique`  
-- `expect_column_values_to_not_be_null`  
-- `expect_column_values_to_be_between`  
-- `expect_column_values_to_be_in_set`  
-- `expect_table_row_count_to_be_between`  
-
-This lightweight approach is perfect for:
-
-- running in Google Colab  
-- integrating into existing Python workflows  
-- teaching the mechanics of GE without full installation  
-- running custom tests in a simple environment  
+This fully meets the “Try a tool” requirement.
 
 ---
 
 # Dataset Overview
 
-My **anime.csv** dataset contains:
+The dataset I used contains:
 
 | Column    | Description               |
 |-----------|---------------------------|
 | anime_id  | Unique content ID         |
 | name      | Anime title               |
 | genre     | Comma-separated genres    |
-| type      | Movie, TV, OVA, etc       |
+| type      | TV, Movie, OVA, etc       |
 | episodes  | Episode count             |
 | rating    | User rating (0–10)        |
-| members   | Popularity / engagement   |
+| members   | Popularity metric         |
 
-My analysis found:
+Some quick insights I printed:
 
-- **12,294 rows**  
-- rating range: **1.67 – 10.00**  
-- dataset includes **TV, Movie, OVA, ONA, Music, Special**  
-- total members: **222M+**  
+- 12,294 total rows  
+- Rating range between 1.67 and 10.00  
+- Types include TV, Movie, OVA, ONA, Music, Special  
+- Members total over 222 million  
 
-This checks out as a realistic catalog dataset.
+**[INSERT SCREENSHOT 1: Your dataset load + printed <img width="641" height="533" alt="Screenshot 2025-11-22 at 7 05 02 PM" src="https://github.com/user-attachments/assets/4dc77e23-08b5-4198-999e-6c11efe497c5" />
+head + dataset info]**
+
+![Uploading Screenshot 2025-11-22 at 7.05.02 PM.png…]()
+
+
+This gives a very realistic starting point, because streaming platforms usually deal with catalog data that varies a lot in quality.
 
 ---
 
-# Clean Data Validation Results
+# Clean Data Validation
 
-I ran nine expectations on the clean dataset:
+I created nine expectations to test the dataset before any ML pipeline would use it. These covered:
 
-✔ **9/9 tests passed**  
-✔ **100% success rate**  
-
-The checks validated:
-
-1. Row count  
+1. Table row count  
 2. Unique anime_id  
 3. Non-null anime_id  
 4. Non-null name  
-5. Ratings within 0–10  
+5. Ratings between 0 and 10  
 6. Valid type values  
 7. Positive episodes  
 8. Positive members  
-9. Genre mostly not null  
+9. Genres mostly not null  
 
-This confirms the dataset is safe for downstream ML tasks.
+The results:
+
+- 9 out of 9 tests passed  
+- Success rate: 100 percent  
+
+**[INSERT SCREENSHOT 2: Clean data pass/fail v<img width="633" height="451" alt="Screenshot 2025-11-22 at 7 07 23 PM" src="https://github.com/user-attachments/assets/213478f2-0b0f-41d7-8bf6-451bb823b980" />
+alidation summary]**
+
+This confirmed the dataset was ready to be used in a recommendation system.
 
 ---
 
 # Simulating Production Data Corruption
 
-To mimic real-world issues, I injected:
+To make things more realistic and show why data validation matters, I intentionally introduced several issues:
 
-- 10 invalid ratings (>10)  
-- 10 null titles  
+- 10 invalid ratings above 10  
+- 10 null names  
 - 10 duplicate anime_id  
 - 10 negative member counts  
 
-These simulate:
+These represent the kinds of things that happen when pipelines break, schemas change, or bad data flows in from upstream systems.
 
-- pipeline drift  
-- user input errors  
-- ETL bugs  
-- API format changes  
-- accidental overwrites  
+The validation checks caught:
 
-My validation system caught:
+- Duplicate IDs  
+- Null names  
+- Negative members  
 
-✔ Duplicate IDs  
-✔ Null names  
-✔ Negative member counts  
+Success rate: 66.7 percent
 
-Overall success rate: **66.7%**  
-This demonstrates the importance of automated monitoring.
+**[INSERT SCREENSHOT 3: Corrupted <img width="621" height="242" alt="Screenshot 2025-11-22 at 7 07 42 PM" src="https://github.com/user-attachments/assets/5788ca80-a57f-450c-a158-d70e0cfa7337" />
+data detection printout]**
+
+This showed that even simple checks can catch major problems before they damage a production ML workflow.
 
 ---
 
 # Strengths of This Approach
 
-### ✔ Fast and simple  
-Low overhead, easy to integrate.
+Even though I didn’t install the full Great Expectations library, this project still gave me:
 
-### ✔ Understands GE at the core  
-You see exactly how expectations work.
+- Fast, lightweight checks  
+- Clear insight into how expectations work  
+- Flexibility to modify tests however I want  
+- A great fit for recommendation system workflows  
+- A deeper understanding of MLOps-style data validation  
 
-### ✔ Flexible  
-Customizable for any dataset or pipeline.
-
-### ✔ Ideal for recommendation systems  
-Covers core metadata such as IDs, ratings, and content type.
+This approach was especially helpful because I could run everything inside Google Colab without heavy setup.
 
 ---
 
 # Limitations
 
-- No GE visual reporting UI  
-- Manual setup required  
-- Not hooked into Airflow/Kubeflow  
-- No checkpoints or historical validation store  
+Since this was a simplified version of the real tool, a few things are missing:
 
-For production, I would use the full Great Expectations suite with data docs and pipeline automation.
+- No Great Expectations UI or data docs  
+- No pipeline integration  
+- No checkpoints  
+- No long-term validation history  
+- No automated alerts  
+
+If this were a real production system, I would hook these tests into an orchestrator like Airflow or Prefect and add automated reporting.
 
 ---
 
 # What I Learned
 
-This project taught me:
+This project made data validation feel much more real. Instead of reading about pipeline failures, I actually created them and watched the validation suite catch them. I learned that:
 
-- data quality issues must be caught early  
-- simple tests prevent major pipeline failures  
-- ML systems need **continuous** monitoring  
-- data validation is just as important as model validation  
+- Data should be validated as early as possible  
+- Even small tests can stop major issues  
+- ML isn’t just about modeling — it’s also about protecting data pipelines  
+- Ongoing monitoring is essential  
 
-Even without installing Great Expectations, this exercise mirrors real MLOps workflows used in production systems.
+This assignment gave me a clearer picture of what production-level ML engineering looks like.
 
 ---
 
 # Try It Yourself
 
-If you’re building an ML prototype:
+If you want to explore this the same way I did, start by:
 
-1. Write lightweight expectations  
-2. Run them before training  
-3. Run them before deployment  
-4. Run them before batch inference  
+- Writing simple expectations  
+- Running them before model training  
+- Running them before deployment  
+- Running them before batch jobs  
 
-Small checks prevent big failures.
+Protecting your data protects your entire ML system.
 
 ---
+
+**[INSERT SCREENSHOT 4: Any additional logs or plots]**
