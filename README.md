@@ -21,9 +21,8 @@ Screenshots, logs, and supporting evidence are included directly on the blog pag
 
 
 ├── assets/
-│  
+ 
+│    └── screenshots/         # Images used in the blog
 
-└── screenshots/         # Images used in the blog
-
-
+│
 └── _config.yml              # GitHub Pages configuration
