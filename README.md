@@ -19,6 +19,10 @@ Screenshots, logs, and supporting evidence are included directly on the blog pag
 ## Repository Structure
 ├── index.md                 # Main blog post
 
+├── data/
+ 
+            └── anime.csv/  
+      
 
 ├── assets/
  
