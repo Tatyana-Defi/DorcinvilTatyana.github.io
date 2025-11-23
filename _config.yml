@@ -1,1 +1,37 @@
-# Empty
+title: "Tatyana’s ML & Data Blog"
+description: "Projects, experiments, and write-ups in MLOps, Machine Learning, and Data Engineering."
+author: "Tatyana Dorcinvil"
+
+# Turn off GitHub’s default theme so index.md controls layout
+theme: null
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+# Enable future blog posts if you add a /_posts directory later
+collections:
+  posts:
+    output: true
+
+# Permalink style for clean URLs
+permalink: /:title/
+
+# Optional: social links (you can remove these)
+social_links:
+  github: https://github.com/Tatyana-Defi
+
+# Enable GitHub Pages plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Default layouts (we're not using theme layouts, so keep them null)
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: null
